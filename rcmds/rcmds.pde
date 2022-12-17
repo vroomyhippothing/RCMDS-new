@@ -3,7 +3,7 @@
 HashSet<Integer> virtualKeyboardButton;
 HashSet<String> virtualGamepadButton;
 String[] Window;
-String imput = "example";
+String imput = "robbie";
 String oldFile;
 String error = null;
 String setup = "";
