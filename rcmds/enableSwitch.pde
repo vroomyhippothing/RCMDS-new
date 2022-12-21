@@ -21,7 +21,7 @@ class EnableSwitch {
     pushStyle();
     if (enabled) {
       boolean pressed=mousescreen.readPressed(pointerID);
-      if (pressed&&!locked||keyboardCtrl.isPressed(ENTER)||gamepadButton("Button 6", false)) {
+      if (pressed&&!locked||keyboardCtrl.isPressed(ENTER)||keyboardCtrl.isPressed(' ')||gamepadButton("Button 6", false)) {
         enabled=false;
         locked=true;
       }
@@ -62,12 +62,12 @@ class EnableSwitch {
         fill(255, 255, 0);
         rect(x+constrain(w/2*swipePos, -w/2+h/2, w/2-h/2), y, h, h, h/4);
       }
-      if ((swipePos<=-1+h/w&&!locked)||(keyboardCtrl.isPressed('[')&&keyboardCtrl.isPressed(']'))||gamepadButton("Button 7", false)) {
+      if ((swipePos<=-1+h/w&&!locked)||(keyboardCtrl.isPressed('[')&&keyboardCtrl.isPressed(']'))) {
         locked=true;
         enabled=true;
       }
     } 
-    if (millis()-wifiReceivedMillis>wifiRetryPingTime*disableTimeMultiplier) {
+    if (millis()-wifiReceivedMillis>wifiRetryPingTime*disableTimeMultiplier||!gamepadButton("Button 2", true)) {
       enabled=false;
     }
     popStyle();

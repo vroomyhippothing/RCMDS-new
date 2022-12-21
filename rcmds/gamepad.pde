@@ -58,6 +58,7 @@ float gamepadVal(String a, float v) {
       }
     }
     catch(NullPointerException n) {
+      println("gamepad disabled err:3");
       output.println(a);
       output.println("gamepad disabled err:3");
       output.flush();

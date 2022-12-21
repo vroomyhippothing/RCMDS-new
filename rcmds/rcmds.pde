@@ -18,7 +18,7 @@ PrintWriter output;
 int autoKey;
 
 void setup() {
-  surface.setSize(576,324);
+  surface.setSize(576, 324);
   virtualKeyboardButton=new HashSet<Integer>();
   virtualGamepadButton=new HashSet<String>();
   output = createWriter("log.txt"); 
@@ -26,7 +26,7 @@ void setup() {
   if (setup.equals("")) {
     udp = new UDP(this);
     udp.listen(true);
-    objectSetup(imput,true);
+    objectSetup(imput, true);
   }
 }
 
@@ -36,7 +36,7 @@ void draw() {
     fill(20);
     noStroke();
     rect(width/2, height*rectHeight/2, width, height*rectHeight);
-    if(!auto) {
+    if (!auto) {
       virtualKeyboardButton.add(autoKey);
       auto = true;
     }
@@ -59,10 +59,7 @@ void draw() {
     }
     if (keyboardCtrl.justPressed(18)) {
       windowSetup("setup");
-      objectSetup(oldFile,true);
-    }
-    if (!focused) {
-      enabled = false;
+      objectSetup(oldFile, true);
     }
     keyboardCtrl.oldKeys=(HashSet)keyboardCtrl.keys.clone();
     virtualKeyboardButton.clear();
