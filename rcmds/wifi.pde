@@ -8,7 +8,7 @@ UDP udp;
 long wifiReceivedMillis=0;
 long wifiSentMillis=0;
 long wifiPing=-1;
-static final int wifiRetryPingTime=800;
+static final int wifiRetryPingTime=250;
 static final float disableTimeMultiplier=8;
 void sendWifiData(boolean t) {
   if ((t&&millis()-wifiSentMillis>wifiRetryPingTime)||!t) {
@@ -37,7 +37,7 @@ void receive( byte[] wifidatareceived, String ip, int port ) {//wifi event handl
     arrayRecvd[i]=(256+wifidatareceived[i])%256;
   }
   wifiArrayCounter=0;
-  for (int i=numCtrl; i<numCtrl+min(numRecv,wifidatareceived.length/4); i++) {
+  for (int i=numCtrl; i<numCtrl+min(numRecv, wifidatareceived.length/4); i++) {
     data[i]=recvFl();
   }
   sendWifiData(false);

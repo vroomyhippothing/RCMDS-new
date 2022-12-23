@@ -14,7 +14,7 @@ class BatteryGraph {
     speed = int(configData[4]);
   }
   boolean run(float volt) {
-    
+
     a++;
 
     if (a >= speed) {
@@ -33,16 +33,16 @@ class BatteryGraph {
 
     stroke(0, 200, 0);
     for (int i=0; i<w; i++) {
-      if (volts[int(map(i, 0, w, 0, volts.length))]>5.5) {
+      if (volts[int(map(i, 0, w, 0, volts.length))]>12) {
         stroke(0, 200, 0);
-      } else if (volts[int(map(i, 0, w, 0, volts.length))]>5.25) {
-        stroke(map(volts[int(map(i, 0, w, 0, volts.length))], 5.25, 5.5, 200, 0), 200, 0);
-      } else if (volts[int(map(i, 0, w, 0, volts.length))]>5) {
-        stroke(200, map(volts[int(map(i, 0, w, 0, volts.length))], 5, 5.25, 0, 200), 0);
+      } else if (volts[int(map(i, 0, w, 0, volts.length))]>11.7) {
+        stroke(map(volts[int(map(i, 0, w, 0, volts.length))], 11.7, 12, 200, 0), 200, 0);
+      } else if (volts[int(map(i, 0, w, 0, volts.length))]>11.4) {
+        stroke(200, map(volts[int(map(i, 0, w, 0, volts.length))], 11.4, 11.7, 0, 200), 0);
       } else {
         stroke(200, 0, 0);
       }
-      line(x+i-w/2, y+h/2, x+i-w/2, y-h*(sqrt(norm(constrain(volts[int(map(i, 0, w, 0, volts.length))], 4, 7), 4, 7))-0.5));
+      line(x+i-w/2, y+h/2, x+i-w/2, y-h*(sqrt(norm(constrain(volts[int(map(i, 0, w, 0, volts.length))], 11, 13), 11, 13))-0.5));
     }
     noStroke();
     return true;

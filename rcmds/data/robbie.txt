@@ -1,7 +1,7 @@
 Robbie the fire tank
-192.168.137.208:25210
-ping: ,var:ping;ip: ,var:ip;port: ,var:port;;f/b: ,var:0;trim: ,var:1;l/r: ,var:2;;left: ,var:6;right: ,var:7;;a: ,var:3;b: ,var:4;
-5,5
+192.168.137.45:25210
+ping: ,var:ping;ip: ,var:ip;port: ,var:port;;f/b: ,var:0;trim: ,var:1;l/r: ,var:2;;speed: ,var:7;turn: ,var:8;;a: ,var:3;b: ,var:4;f: ,var:5;
+6,6
 
 3,f,Button 0,1,1,1,0,0
 4,j,Button 1,1,1,1,0,0
